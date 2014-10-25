@@ -19,11 +19,12 @@ public class Lista {
 	//Para saber si la lista esta vacia.
 	public boolean Vacia(){
 		if(inicio==null){
-			return true; //si el inicio es NULL entonces 'Sí' esta vacia.
+			return true; //si el inicio es NULL entonces 'SÃ­' esta vacia.
 		}else{
 			return false; //si el incio apunta a un Nodo entonces 'No' esta vacia.
 		}
 	}
+
 	
 	//Buscar en la lista
 	public boolean Buscar(String elemento){
@@ -118,5 +119,5 @@ public class Lista {
 		}
 		
 	}//fin eliminar
-	
+CREO QUE YA PUDE..HAHAHAHAHAHA	
 }
