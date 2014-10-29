@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 public class Lista {
 	
 	Nodo inicio, fin;
@@ -73,6 +73,62 @@ public class Lista {
 	}
 
 	
-	
+
+	//MODIFICAR DATO EN ESPECIFICO
+		public void AgregarPosicion(int posicion){
+				Nodo temporal = inicio;
+
+					if(posicion>tamaño){
+						System.out.println("La posicion ingresada no existe, revise el tamaño\n"
+								+ "de la lista a traves de la opcion 4. del menu principal.");
+					}else{
+						System.out.println("Ingrese el nuevo elemento: ");
+						Scanner nd = new Scanner(System.in);
+						String nDato = nd.next();
+						for(int i=1;i<posicion-1;i++){
+							temporal = temporal.siguiente;
+						}
+						Nodo nuevo = new Nodo(nDato);
+						nuevo.siguiente = temporal.siguiente;
+						temporal.siguiente = nuevo;
+					}
+			}
+
+
+
+	//OBTENER UN DATO EN UNA POSICION
+		
+		//OBTENER POSICION
+		public void Obtener(int posicion){
+			Nodo temporal=inicio;
+			if(posicion>tamaño){
+				System.out.println("La posicion ingresada no existe, revise el tamaño actual\n"
+						+ "de la lista a traves de la opcion 4. del menu principal.");
+			}else{
+				for(int i=1;i<posicion-1;i++){
+					temporal = temporal.siguiente;
+				}
+				System.out.println("El elemento en la posicion: "+ posicion+ " es: "+temporal.dato);
+			}
+		}
+
+
+
+
+	//ELIMINAR POSICION
+		public void Eliminar(int posicion) {
+			Nodo temporal = inicio;
+			if(posicion>tamaño){
+				System.out.println("La posicion ingresada no existe, revise el tamaño\n"
+						+ "de la lista a traves de la opcion 4. del menu principal.");
+			}else{
+				for(int i=1;i<posicion-1;i++){
+					temporal = temporal.siguiente;
+				}
+						temporal.siguiente = temporal.siguiente.siguiente;
+				System.out.println("----Nodo Eliminado con Exito----");
+			}
+			
+		}
 	
 }
